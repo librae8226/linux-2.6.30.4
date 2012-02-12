@@ -133,9 +133,10 @@ static struct s3c2410_nand_set smdk_nand_sets[] = {
 	},
 };
 
-/* choose a set of timings which should suit most 512Mbit
+/*
+ * choose a set of timings which should suit most 512Mbit
  * chips and beyond.
-*/
+ */
 
 static struct s3c2410_platform_nand smdk_nand_info = {
 	.tacls		= 10,
