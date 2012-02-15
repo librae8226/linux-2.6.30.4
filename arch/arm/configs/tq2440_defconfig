@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
 # Linux kernel version: 2.6.30.4
-# Sun Feb 12 23:35:43 2012
+# Wed Feb 15 23:32:47 2012
 #
 CONFIG_ARM=y
 CONFIG_HAVE_PWM=y
@@ -1886,7 +1886,7 @@ CONFIG_NLS_UTF8=y
 #
 # Kernel hacking
 #
-# CONFIG_PRINTK_TIME is not set
+CONFIG_PRINTK_TIME=y
 CONFIG_ENABLE_WARN_DEPRECATED=y
 CONFIG_ENABLE_MUST_CHECK=y
 CONFIG_FRAME_WARN=1024
