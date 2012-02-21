@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
 # Linux kernel version: 2.6.30.4
-# Mon Feb 20 22:50:59 2012
+# Tue Feb 21 19:55:57 2012
 #
 CONFIG_ARM=y
 CONFIG_HAVE_PWM=y
@@ -935,9 +935,9 @@ CONFIG_HW_RANDOM=y
 # CONFIG_TCG_TPM is not set
 CONFIG_I2C=y
 CONFIG_I2C_BOARDINFO=y
-CONFIG_I2C_CHARDEV=m
+CONFIG_I2C_CHARDEV=y
 CONFIG_I2C_HELPER_AUTO=y
-CONFIG_I2C_ALGOBIT=y
+CONFIG_I2C_ALGOBIT=m
 
 #
 # I2C Hardware Bus support
@@ -949,7 +949,7 @@ CONFIG_I2C_ALGOBIT=y
 # CONFIG_I2C_GPIO is not set
 # CONFIG_I2C_OCORES is not set
 CONFIG_I2C_S3C2410=y
-CONFIG_I2C_SIMTEC=y
+# CONFIG_I2C_SIMTEC is not set
 
 #
 # External I2C/SMBus adapter drivers
