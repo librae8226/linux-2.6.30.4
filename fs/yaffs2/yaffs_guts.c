@@ -6664,10 +6664,11 @@ static int yaffs_ScanBackwards(yaffs_Device *dev)
 							/* This is a partially written block that is not
 							 * the current allocation block.
 							 */
-
+#if 0
 							 T(YAFFS_TRACE_ALWAYS,
 							 (TSTR("Partially written block %d detected" TENDSTR),
 							 blk));
+#endif
 						}
 					}
 				}
