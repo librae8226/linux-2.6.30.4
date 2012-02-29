@@ -449,7 +449,7 @@ Uncompressing Linux.............................................................
 [    2.665000] dm9000 Ethernet Driver, V1.31
 [    2.670000] Now use the default MAC address: 10:23:45:67:89:AB
 [    2.675000] eth0 (dm9000): not using net_device_ops yet
-[    2.680000] eth0: dm9000e at c4810000,c4814004 IRQ 51 MAC: 10:23:45:67:89:ab (EmbedSky)
+[    2.680000] eth0: dm9000e at c4810000,c4814004 IRQ 51 MAC: 10:23:45:67:89:ab (LeafGrass)
 [    2.690000] S3C24XX NAND Driver, (c) 2004 Simtec Electronics
 [    2.695000] s3c2440-nand s3c2440-nand: Tacls=2, 20ns Twrph0=3 30ns, Twrph1=2 20ns
 [    2.700000] NAND device: Manufacturer ID: 0xec, Chip ID: 0xda (Samsung NAND 256MiB 3,3V 8-bit)

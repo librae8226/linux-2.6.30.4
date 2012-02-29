@@ -1378,7 +1378,7 @@ dm9000_probe(struct platform_device *pdev)
 
 #if defined(CONFIG_ARCH_S3C2410)
 	printk("Now use the default MAC address: 10:23:45:67:89:AB\n");
-	mac_src = "EmbedSky";
+	mac_src = "LeafGrass";
 	ndev->dev_addr[0] = 0x10;
 	ndev->dev_addr[1] = 0x23;
 	ndev->dev_addr[2] = 0x45;
