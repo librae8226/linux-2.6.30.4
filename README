@@ -1,13 +1,13 @@
-          +---------------------------------------+
-          |   This git repo is for tq2440 board.  |
-          |   - librae8226@gmail.com              |
-          +---------------------------------------+
+           +---------------------------------------+
+           |   This git repo is for tq2440 board.  |
+           |   - librae8226@gmail.com              |
+           +---------------------------------------+
 
 	Linux kernel release 2.6.xx <http://kernel.org/>
 
 These are the release notes for Linux version 2.6.  Read them carefully,
 as they tell you what this is all about, explain how to install the
-kernel, and what to do if something goes wrong. 
+kernel, and what to do if something goes wrong.
 
 WHAT IS LINUX?
 
@@ -21,7 +21,7 @@ WHAT IS LINUX?
   and multistack networking including IPv4 and IPv6.
 
   It is distributed under the GNU General Public License - see the
-  accompanying COPYING file for more details. 
+  accompanying COPYING file for more details.
 
 ON WHAT HARDWARE DOES IT RUN?
 
@@ -49,7 +49,7 @@ DOCUMENTATION:
    system: there are much better sources available.
 
  - There are various README files in the Documentation/ subdirectory:
-   these typically contain kernel-specific installation notes for some 
+   these typically contain kernel-specific installation notes for some
    drivers for example. See Documentation/00-INDEX for a list of what
    is contained in each file.  Please read the Changes file, as it
    contains information about the problems, which may result by upgrading
@@ -206,7 +206,7 @@ CONFIGURING the kernel:
 	  coprocessor if one is present: the math emulation will just
 	  never get used in that case.  The kernel will be slightly larger,
 	  but will work on different machines regardless of whether they
-	  have a math coprocessor or not. 
+	  have a math coprocessor or not.
 	- the "kernel hacking" configuration details usually result in a
 	  bigger or slower kernel (or both), and can even make the kernel
 	  less stable by configuring some routines to actively try to
@@ -244,7 +244,7 @@ COMPILING the kernel:
    To have the build system also tell the reason for the rebuild of each
    target, use "V=2".  The default is "V=0".
 
- - Keep a backup kernel handy in case something goes wrong.  This is 
+ - Keep a backup kernel handy in case something goes wrong.  This is
    especially true for the development releases, since each new release
    contains new code which has not been debugged.  Make sure you keep a
    backup of the modules corresponding to that kernel, as well.  If you
@@ -257,7 +257,7 @@ COMPILING the kernel:
 
  - In order to boot your new kernel, you'll need to copy the kernel
    image (e.g. .../linux/arch/i386/boot/bzImage after compilation)
-   to the place where your regular bootable kernel is found. 
+   to the place where your regular bootable kernel is found.
 
  - Booting a kernel directly from a floppy without the assistance of a
    bootloader such as LILO, is no longer supported.
@@ -270,10 +270,10 @@ COMPILING the kernel:
    to update the loading map!! If you don't, you won't be able to boot
    the new kernel image.
 
-   Reinstalling LILO is usually a matter of running /sbin/lilo. 
+   Reinstalling LILO is usually a matter of running /sbin/lilo.
    You may wish to edit /etc/lilo.conf to specify an entry for your
    old kernel image (say, /vmlinux.old) in case the new one does not
-   work.  See the LILO docs for more information. 
+   work.  See the LILO docs for more information.
 
    After reinstalling LILO, you should be all set.  Shutdown the system,
    reboot, and enjoy!
@@ -281,9 +281,9 @@ COMPILING the kernel:
    If you ever need to change the default root device, video mode,
    ramdisk size, etc.  in the kernel image, use the 'rdev' program (or
    alternatively the LILO boot options when appropriate).  No need to
-   recompile the kernel to change these parameters. 
+   recompile the kernel to change these parameters.
 
- - Reboot with the new kernel and enjoy. 
+ - Reboot with the new kernel and enjoy.
 
 IF SOMETHING GOES WRONG:
 
@@ -350,7 +350,7 @@ IF SOMETHING GOES WRONG:
    is followed by a function with a higher address you will find the one
    you want.  In fact, it may be a good idea to include a bit of
    "context" in your problem report, giving a few lines around the
-   interesting one. 
+   interesting one.
 
    If you for some reason cannot do the above (you have a pre-compiled
    kernel image or similar), telling me as much about your setup as
@@ -369,3 +369,143 @@ IF SOMETHING GOES WRONG:
    gdb'ing a non-running kernel currently fails because gdb (wrongly)
    disregards the starting offset for which the kernel is compiled.
 
+Typically Bootup Log
+--------------------
+Start Linux ...
+Copy linux kernel from 0x00200000 to 0x30008000, size = 0x00200000 ... Copy Kernel to SDRAM done,NOW, Booting Linux......
+Uncompressing Linux.................................................................................................................
+[    0.000000] +-------------------------------------------------------+
+[    0.000000] | Penguins are cute, but so are polar bears - Kick off. |
+[    0.000000] +-------------------------------------------------------+
+[    0.000000] Linux version 2.6.30.4LeafGrass (librae@fedora.desktop) (gcc version 4.3.3 (Sourcery G++ Lite 2009q1-176)) #34 Thu Mar 1 00:26:13 CST 2012
+[    0.000000] CPU: ARM920T [41129200] revision 0 (ARMv4T), cr=c0007177
+[    0.000000] CPU: VIVT data cache, VIVT instruction cache
+[    0.000000] Machine: SMDK2440
+[    0.000000] ATAG_INITRD is deprecated; please update your bootloader.
+[    0.000000] Memory policy: ECC disabled, Data cache writeback
+[    0.000000] CPU S3C2440A (id 0x32440001)
+[    0.000000] S3C24XX Clocks, (c) 2004 Simtec Electronics
+[    0.000000] S3C244X: core 400.000 MHz, memory 100.000 MHz, peripheral 50.000 MHz
+[    0.000000] CLOCK: Slow mode (1.500 MHz), fast, MPLL on, UPLL on
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 16256
+[    0.000000] Kernel command line: noinitrd root=/dev/mtdblock2 init=/linuxrc console=ttySAC0
+[    0.000000] NR_IRQS:99
+[    0.000000] irq: clearing subpending status 00000003
+[    0.000000] irq: clearing subpending status 00000002
+[    0.000000] PID hash table entries: 256 (order: 8, 1024 bytes)
+[    0.005000] Console: colour dummy device 80x30
+[    0.005000] console [ttySAC0] enabled
+[    0.010000] Dentry cache hash table entries: 8192 (order: 3, 32768 bytes)
+[    0.015000] Inode-cache hash table entries: 4096 (order: 2, 16384 bytes)
+[    0.035000] Memory: 64MB = 64MB total
+[    0.035000] Memory: 61248KB available (3120K code, 266K data, 128K init, 0K highmem)
+[    0.040000] Calibrating delay loop... 199.47 BogoMIPS (lpj=498688)
+[    0.140000] Mount-cache hash table entries: 512
+[    0.140000] CPU: Testing write buffer coherency: ok
+[    0.150000] net_namespace: 296 bytes
+[    0.165000] NET: Registered protocol family 16
+[    0.200000] S3C Power Management, Copyright 2004 Simtec Electronics
+[    0.200000] S3C2440: Initialising architecture
+[    0.205000] S3C2440: IRQ Support
+[    0.205000] S3C24XX DMA Driver, (c) 2003-2004,2006 Simtec Electronics
+[    0.210000] DMA channel 0 at c4808000, irq 33
+[    0.210000] DMA channel 1 at c4808040, irq 34
+[    0.215000] DMA channel 2 at c4808080, irq 35
+[    0.220000] DMA channel 3 at c48080c0, irq 36
+[    0.225000] S3C244X: Clock Support, DVS off
+[    0.350000] bio: create slab <bio-0> at 0
+[    0.360000] SCSI subsystem initialized
+[    0.365000] usbcore: registered new interface driver usbfs
+[    0.370000] usbcore: registered new interface driver hub
+[    0.375000] usbcore: registered new device driver usb
+[    0.385000] s3c2440-i2c s3c2440-i2c: slave address 0x10
+[    0.385000] s3c2440-i2c s3c2440-i2c: bus frequency set to 97 KHz
+[    0.395000] s3c2440-i2c s3c2440-i2c: i2c-0: S3C I2C adapter
+[    0.430000] NET: Registered protocol family 2
+[    0.430000] IP route cache hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.435000] TCP established hash table entries: 2048 (order: 2, 16384 bytes)
+[    0.440000] TCP bind hash table entries: 2048 (order: 1, 8192 bytes)
+[    0.445000] TCP: Hash tables configured (established 2048 bind 2048)
+[    0.450000] TCP reno registered
+[    0.455000] NET: Registered protocol family 1
+[    0.460000] NetWinder Floating Point Emulator V0.97 (extended precision)
+[    0.480000] yaffs Feb 27 2012 00:04:53 Installing.
+[    0.480000] msgmni has been set to 119
+[    0.480000] io scheduler noop registered
+[    0.485000] io scheduler anticipatory registered (default)
+[    0.490000] io scheduler deadline registered
+[    0.495000] io scheduler cfq registered
+[    0.515000] Console: switching to colour frame buffer device 40x30
+[    0.520000] fb0: s3c2410fb frame buffer device
+[    2.520000] s3c2440-uart.0: tq2440_serial0 at MMIO 0x50000000 (irq = 70) is a S3C2440
+[    2.530000] s3c2440-uart.1: tq2440_serial1 at MMIO 0x50004000 (irq = 73) is a S3C2440
+[    2.535000] s3c2440-uart.2: tq2440_serial2 at MMIO 0x50008000 (irq = 76) is a S3C2440
+[    2.615000] brd: module loaded
+[    2.650000] loop: module loaded
+[    2.650000] Uniform Multi-Platform E-IDE driver
+[    2.655000] ide-gd driver 1.18
+[    2.655000] ide-cd driver 5.00
+[    2.660000] Driver 'sd' needs updating - please use bus_type methods
+[    2.665000] dm9000 Ethernet Driver, V1.31
+[    2.670000] Now use the default MAC address: 10:23:45:67:89:AB
+[    2.675000] eth0 (dm9000): not using net_device_ops yet
+[    2.680000] eth0: dm9000e at c4810000,c4814004 IRQ 51 MAC: 10:23:45:67:89:ab (EmbedSky)
+[    2.690000] S3C24XX NAND Driver, (c) 2004 Simtec Electronics
+[    2.695000] s3c2440-nand s3c2440-nand: Tacls=2, 20ns Twrph0=3 30ns, Twrph1=2 20ns
+[    2.700000] NAND device: Manufacturer ID: 0xec, Chip ID: 0xda (Samsung NAND 256MiB 3,3V 8-bit)
+[    2.710000] Scanning device for bad blocks
+[    2.725000] Bad eraseblock 582 at 0x0000048c0000
+[    2.740000] Bad eraseblock 1216 at 0x000009800000
+[    2.740000] Bad eraseblock 1217 at 0x000009820000
+[    2.745000] Bad eraseblock 1251 at 0x000009c60000
+[    2.750000] Bad eraseblock 1253 at 0x000009ca0000
+[    2.755000] Bad eraseblock 1276 at 0x000009f80000
+[    2.775000] Bad eraseblock 1907 at 0x00000ee60000
+[    2.780000] Creating 3 MTD partitions on "NAND 256MiB 3,3V 8-bit":
+[    2.780000] 0x000000000000-0x000000040000 : "tq2440_uboot"
+[    2.800000] 0x000000200000-0x000000500000 : "tq2440_kernel"
+[    2.810000] 0x000000500000-0x000010000000 : "tq2440_yaffs2"
+[    2.830000] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+[    2.830000] s3c2410-ohci s3c2410-ohci: S3C24XX OHCI
+[    2.835000] s3c2410-ohci s3c2410-ohci: new USB bus registered, assigned bus number 1
+[    2.840000] s3c2410-ohci s3c2410-ohci: irq 42, io mem 0x49000000
+[    2.905000] usb usb1: configuration #1 chosen from 1 choice
+[    2.910000] hub 1-0:1.0: USB hub found
+[    2.910000] hub 1-0:1.0: 2 ports detected
+[    2.930000] Initializing USB Mass Storage driver...
+[    2.930000] usbcore: registered new interface driver usb-storage
+[    2.935000] USB Mass Storage support registered.
+[    2.945000] mice: PS/2 mouse device common for all mice
+[    2.945000] S3C24XX RTC, (c) 2004,2006 Simtec Electronics
+[    2.950000] i2c /dev entries driver
+[    2.960000] S3C2410 Watchdog Timer, (c) 2004 Simtec Electronics
+[    2.965000] s3c2410-wdt s3c2410-wdt: watchdog inactive, reset disabled, irq enabled
+[    3.025000] usbcore: registered new interface driver hiddev
+[    3.025000] usbcore: registered new interface driver usbhid
+[    3.030000] usbhid: v2.6:USB HID core driver
+[    3.035000] Advanced Linux Sound Architecture Driver Version 1.0.20.
+[    3.045000] ALSA device list:
+[    3.045000]   No soundcards found.
+[    3.050000] TCP cubic registered
+[    3.050000] RPC: Registered udp transport module.
+[    3.055000] RPC: Registered tcp transport module.
+[    3.075000] drivers/rtc/hctosys.c: unable to open rtc device (rtc0)
+[    3.170000] yaffs: dev is 32505858 name is "mtdblock2"
+[    3.170000] yaffs: passed flags ""
+[    3.175000] yaffs: Attempting MTD mount on 31.2, "mtdblock2"
+[    3.180000] yaffs: auto selecting yaffs2
+[    3.255000] block 543 is bad
+[    3.270000] block 1177 is bad
+[    3.270000] block 1178 is bad
+[    3.270000] block 1212 is bad
+[    3.275000] block 1214 is bad
+[    3.280000] block 1237 is bad
+[    3.300000] block 1868 is bad
+[    3.355000] usb 1-1: new low speed USB device using s3c2410-ohci and address 2
+[    3.530000] usb 1-1: configuration #1 chosen from 1 choice
+[    3.555000] input: USB Optical Mouse as /class/input/input0
+[    3.565000] generic-usb 0003:192F:0416.0001: input: USB HID v1.11 Mouse [USB Optical Mouse] on usb-s3c24xx-1/input0
+[    4.730000] yaffs_read_super: isCheckpointed 0
+[    4.730000] VFS: Mounted root (yaffs filesystem) on device 31:2.
+[    4.735000] Freeing init memory: 128K
+Please press Enter to activate this console.
