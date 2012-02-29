@@ -556,6 +556,7 @@ static void s3c2410fb_lcd_enable(struct s3c2410fb_info *fbi, int enable)
  */
 static int s3c2410fb_blank(int blank_mode, struct fb_info *info)
 {
+#if 0
 	struct s3c2410fb_info *fbi = info->par;
 	void __iomem *tpal_reg = fbi->io;
 
@@ -575,29 +576,52 @@ static int s3c2410fb_blank(int blank_mode, struct fb_info *info)
 		dprintk("setting TPAL to output 0x000000\n");
 		writel(S3C2410_TPAL_EN, tpal_reg);
 	}
+#else /* tq2440 */
+	struct s3c2410fb_info *fbi = info->par;
+	void __iomem *regs = fbi->io;
+	u_long flags;
+
+	local_irq_save(flags);
+	fbi->regs.lcdcon5 = __raw_readl(regs + S3C2410_LCDCON5);
+	switch( blank_mode )
+	{
+	case 0:
+		fbi->regs.lcdcon5 &= ~S3C2410_LCDCON5_PWREN;
+		printk(KERN_INFO "Turn off The LCD Backlight\n");
+		break;
+	case 1:
+		fbi->regs.lcdcon5 |= S3C2410_LCDCON5_PWREN;
+		printk(KERN_INFO "Turn on The LCD Backlight\n");
+		break;
+	default:
+		break;
+	}
+	__raw_writel(fbi->regs.lcdcon5, regs + S3C2410_LCDCON5);
+	local_irq_restore(flags);
+#endif
 
 	return 0;
 }
 
 static int s3c2410fb_debug_show(struct device *dev,
-				struct device_attribute *attr, char *buf)
+		struct device_attribute *attr, char *buf)
 {
 	return snprintf(buf, PAGE_SIZE, "%s\n", debug ? "on" : "off");
 }
 
 static int s3c2410fb_debug_store(struct device *dev,
-				 struct device_attribute *attr,
-				 const char *buf, size_t len)
+		struct device_attribute *attr,
+		const char *buf, size_t len)
 {
 	if (len < 1)
 		return -EINVAL;
 
 	if (strnicmp(buf, "on", 2) == 0 ||
-	    strnicmp(buf, "1", 1) == 0) {
+			strnicmp(buf, "1", 1) == 0) {
 		debug = 1;
 		printk(KERN_DEBUG "s3c2410fb: Debug On");
 	} else if (strnicmp(buf, "off", 3) == 0 ||
-		   strnicmp(buf, "0", 1) == 0) {
+			strnicmp(buf, "0", 1) == 0) {
 		debug = 0;
 		printk(KERN_DEBUG "s3c2410fb: Debug Off");
 	} else {

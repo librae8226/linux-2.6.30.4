@@ -115,19 +115,19 @@ static struct s3c2410fb_display smdk2440_lcd_cfg __initdata = {
 
 	.type		= S3C2410_LCDCON1_TFT,
 
-	.width		= 240,
-	.height		= 320,
+	.width		= 320,
+	.height		= 240,
 
-	.pixclock	= 166667, /* HCLK 60 MHz, divisor 10 */
-	.xres		= 240,
-	.yres		= 320,
+	.pixclock	= 80000,
+	.xres		= 320,
+	.yres		= 240,
 	.bpp		= 16,
-	.left_margin	= 20,
-	.right_margin	= 8,
-	.hsync_len	= 4,
-	.upper_margin	= 8,
-	.lower_margin	= 7,
-	.vsync_len	= 4,
+	.left_margin	= 28,
+	.right_margin	= 24,
+	.hsync_len	= 42,
+	.upper_margin	= 6,
+	.lower_margin	= 2,
+	.vsync_len	= 12,
 };
 
 static struct s3c2410fb_mach_info smdk2440_fb_info __initdata = {
@@ -147,7 +147,7 @@ static struct s3c2410fb_mach_info smdk2440_fb_info __initdata = {
 	.gpdup_mask	= 0xffffffff,
 #endif
 
-	.lpcsel		= ((0xCE6) & ~7) | 1<<4,
+	/*.lpcsel	= ((0xCE6) & ~7) | 1<<4,*/
 };
 
 /* DM9000 */
