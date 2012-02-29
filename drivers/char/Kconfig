@@ -1031,6 +1031,12 @@ config RAW_DRIVER
           Applications should preferably open the device (eg /dev/hda1)
           with the O_DIRECT flag.
 
+config GDBG_MODULE
+	tristate "Generic Debug Module"
+	help
+	  This is a generic debug module which allows direct access to kernel
+	  space and manage to hardware.
+
 config MAX_RAW_DEVS
 	int "Maximum number of RAW devices to support (1-8192)"
 	depends on RAW_DRIVER
