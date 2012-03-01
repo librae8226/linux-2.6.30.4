@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
 # Linux kernel version: 2.6.30.4
-# Thu Mar  1 01:32:36 2012
+# Fri Mar  2 00:40:40 2012
 #
 CONFIG_ARM=y
 CONFIG_HAVE_PWM=y
@@ -33,7 +33,7 @@ CONFIG_DEFCONFIG_LIST="/lib/modules/$UNAME_RELEASE/.config"
 CONFIG_EXPERIMENTAL=y
 CONFIG_BROKEN_ON_SMP=y
 CONFIG_INIT_ENV_ARG_LIMIT=32
-CONFIG_LOCALVERSION="LeafGrass"
+CONFIG_LOCALVERSION="-LeafGrass"
 CONFIG_LOCALVERSION_AUTO=y
 CONFIG_SWAP=y
 CONFIG_SYSVIPC=y
