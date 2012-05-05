@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
 # Linux kernel version: 2.6.30.4
-# Fri Mar  2 03:25:46 2012
+# Sat May  5 10:40:37 2012
 #
 CONFIG_ARM=y
 CONFIG_HAVE_PWM=y
@@ -585,7 +585,7 @@ CONFIG_MTD_NAND=y
 CONFIG_MTD_NAND_IDS=y
 CONFIG_MTD_NAND_S3C2410=y
 # CONFIG_MTD_NAND_S3C2410_DEBUG is not set
-CONFIG_MTD_NAND_S3C2410_HWECC=y
+# CONFIG_MTD_NAND_S3C2410_HWECC is not set
 # CONFIG_MTD_NAND_S3C2410_CLKSTOP is not set
 # CONFIG_MTD_NAND_DISKONCHIP is not set
 # CONFIG_MTD_NAND_NANDSIM is not set
